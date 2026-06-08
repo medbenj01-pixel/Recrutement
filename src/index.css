@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@theme {
+  --color-white: #111111;
+  --color-gray-50: #050505;
+  --color-slate-50: #050505;
+  --color-gray-100: rgba(255, 255, 255, 0.08);
+  --color-slate-100: rgba(255, 255, 255, 0.08);
+  --color-gray-200: rgba(255, 255, 255, 0.15);
+  --color-slate-200: #e2e8f0;
+  --color-gray-300: rgba(255, 255, 255, 0.25);
+  --color-slate-300: #cbd5e1;
+  --color-gray-400: #a1a1aa;
+  --color-slate-400: #94a3b8;
+  --color-gray-500: #71717a;
+  --color-slate-500: #64748b;
+  --color-gray-650: #a1a1aa;
+  --color-gray-600: #a1a1aa;
+  --color-slate-650: #94a3b8;
+  --color-slate-600: #94a3b8;
+  --color-gray-700: #cbd5e1;
+  --color-slate-700: #cbd5e1;
+  --color-gray-800: rgba(255, 255, 255, 0.15);
+  --color-slate-800: rgba(255, 255, 255, 0.15);
+  --color-gray-900: #e2e8f0;
+  --color-slate-900: #e2e8f0;
+  --color-gray-950: #ffffff;
+  --color-slate-950: #ffffff;
+  
+  --color-blue-50: rgba(59, 130, 246, 0.12);
+  --color-blue-100: rgba(59, 130, 246, 0.2);
+  --color-blue-600: #3b82f6;
+  --color-blue-700: #60a5fa;
+  
+  --color-emerald-50: rgba(16, 185, 129, 0.12);
+  --color-emerald-100: rgba(16, 185, 129, 0.2);
+  --color-emerald-600: #10b981;
+  --color-emerald-700: #34d399;
+  
+  --color-indigo-50: rgba(99, 102, 241, 0.12);
+  --color-indigo-150: #a5b4fc;
+  
+  --color-red-50: rgba(239, 68, 68, 0.12);
+  --color-red-100: rgba(239, 68, 68, 0.2);
+  --color-red-500: #f87171;
+  --color-red-650: #fca5a5;
+  
+  --font-sans: "Inter", -apple-system, sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: #050505;
+    color: #e2e8f0;
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  /* Inputs, selects, textareas styling for dark theme default support */
+  input, select, textarea {
+    background-color: #111111 !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  /* When select holds option children, make sure browser popup list looks clean and dark */
+  option {
+    background-color: #111111 !important;
+    color: #ffffff !important;
+  }
+  
+  /* Custom scrollbar to keep it sleek */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050505;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Glass panel classes for high-quality card layout aesthetics */
+.glass, .job-card, .dashboard-card {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.job-card:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: #3b82f6 !important;
+}
+
+/* Status pills custom colors */
+.status-pill {
+  padding: 2px 8px;
+  border-radius: 100px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+.status-review {
+  background: rgba(245, 158, 11, 0.1) !important;
+  color: #fbbf24 !important;
+  border: 1px solid rgba(245, 158, 11, 0.2) !important;
+}
+
+.status-accept {
+  background: rgba(16, 185, 129, 0.1) !important;
+  color: #34d399 !important;
+  border: 1px solid rgba(16, 185, 129, 0.2) !important;
+}
+
+.status-pending {
+  background: rgba(59, 130, 246, 0.1) !important;
+  color: #60a5fa !important;
+  border: 1px solid rgba(59, 130, 246, 0.2) !important;
+}
+
+.status-refused {
+  background: rgba(239, 68, 68, 0.1) !important;
+  color: #f87171 !important;
+  border: 1px solid rgba(239, 68, 68, 0.2) !important;
+}
+
+/* Scrollbars hiding logic for side elements */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Active elements matching template navigation styles */
+.sidebar-item.active {
+  background: rgba(59, 130, 246, 0.1) !important;
+  color: white !important;
+  border-right: 2px solid #3b82f6 !important;
+}
